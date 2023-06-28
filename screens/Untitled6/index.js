@@ -14,7 +14,8 @@ const Untitled6 = () => {
 
 const styles = StyleSheet.create({
   safeArea: {
-    height: "100%"
+    height: "100%",
+    backgroundColor: "#501010"
   }
 });
 export default Untitled6;
