@@ -1,7 +1,20 @@
-import React from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { rest_auth_registration_create } from "../../store/julyravinderdevAPI/signups.slice.js";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import React from "react";
+import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 
-const LoginScreen = () => {
+const LoginScreen = ({
+  route
+}) => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(rest_auth_registration_create({
+      username: "ravinder",
+      password: "testing"
+    }));
+  }, []);
+  const {} = route.params || {};
   return <View style={styles.container}>
       <Text style={styles.logo}>Logo</Text>
       <View style={styles.inputView}>
@@ -22,45 +35,45 @@ const LoginScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fff'
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#fff"
   },
   logo: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 50,
-    color: '#003f5c',
+    color: "#003f5c",
     marginBottom: 40
   },
   inputView: {
-    width: '80%',
-    backgroundColor: '#e6e6e6',
+    width: "80%",
+    backgroundColor: "#e6e6e6",
     borderRadius: 25,
     height: 50,
     marginBottom: 20,
-    justifyContent: 'center',
+    justifyContent: "center",
     padding: 20
   },
   inputText: {
     height: 50,
-    color: 'black'
+    color: "black"
   },
   forgotPassword: {
-    color: '#003f5c',
+    color: "#003f5c",
     fontSize: 16
   },
   loginBtn: {
-    width: '80%',
-    backgroundColor: '#003f5c',
+    width: "80%",
+    backgroundColor: "#003f5c",
     borderRadius: 25,
     height: 50,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     marginTop: 40,
     marginBottom: 10
   },
   loginText: {
-    color: 'white'
+    color: "white"
   }
 });
 export default LoginScreen;
