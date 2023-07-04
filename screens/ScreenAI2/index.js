@@ -1,7 +1,14 @@
+import { api_v1_login_create } from "../../store/julyravinderdevAPI/authTokens.slice.js";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
 const LoginScreen = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(api_v1_login_create());
+  }, []);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
