@@ -5,7 +5,7 @@ export const globalOptions = {
   "screenOptions": {
     "headerShown": false
   },
-  "initialRoute": "ScreenAI8"
+  "initialRoute": "Untitled6"
 };
 export const modulesOptions = {
   "@modules/app-menu": {
